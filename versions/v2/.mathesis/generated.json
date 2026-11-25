@@ -1,0 +1,38 @@
+{
+  "generated_paths": [
+    "CHANGELOG.md",
+    "CITATION.cff",
+    "CONTRIBUTING.md",
+    "LICENSES/CC-BY-4.0.txt",
+    "README.md",
+    "formalization/nodes.json",
+    "manuscript/bala281428-factorial-valuations-v2/README.md",
+    "manuscript/bala281428-factorial-valuations-v2/SHA256SUMS",
+    "manuscript/bala281428-factorial-valuations-v2/metadata.json",
+    "manuscript/bala281428-factorial-valuations-v2/note.tex",
+    "manuscript/bala281428-factorial-valuations-v2/verification.json",
+    "manuscript/bala281428-factorial-valuations-v2/verify.py",
+    "paper.json",
+    "paper.pdf",
+    "source.archive"
+  ],
+  "generator_version": "0.1.0",
+  "sha256": {
+    "CHANGELOG.md": "b51158266a92fb4c9a9669256667feba4453fb6bee8b0bc7a6b4abe0d0cba146",
+    "CITATION.cff": "74e13d92ec319c875a3fc92cab544a007c9f7e486ca70b5a09f88cbcb10aa59d",
+    "CONTRIBUTING.md": "fafd66e63160b2a88f433af56d2af2b0f7bf6ed2fd417d46b54446ce07c627ff",
+    "LICENSES/CC-BY-4.0.txt": "58230517b7895aa219ff46a6ed63e67057a1582fb9ea054b16728a8c13525650",
+    "README.md": "61d020238232d1b6b3719afca4a524b00f983a0ca32bd7582543ce580f9d2cc8",
+    "formalization/nodes.json": "d45d2dc9ac4ac3ddc43b45d9b234ac5b1f3fa5e27738dd5ebeddcb5598209f6e",
+    "manuscript/bala281428-factorial-valuations-v2/README.md": "1acac26940739675f92ed98c822196ae6aa9d86360204bd2055be746aa249aa7",
+    "manuscript/bala281428-factorial-valuations-v2/SHA256SUMS": "0833f0a820b424ce4e510250227ccf03938ea3cbd58467c25bd73452d83585c3",
+    "manuscript/bala281428-factorial-valuations-v2/metadata.json": "1a08e1f38eb8d246ae3beeecacf251a694f3ef524a1003512a406eab8a6decdb",
+    "manuscript/bala281428-factorial-valuations-v2/note.tex": "ff9b3750b9f6ecb446bf897edab16a1d7e586d30f47d2f99e17a4c26d959e397",
+    "manuscript/bala281428-factorial-valuations-v2/verification.json": "35466712c8b8332a003a58337322b512791df3c253e38be8d1bb6cc9973fc284",
+    "manuscript/bala281428-factorial-valuations-v2/verify.py": "4d65735daa5e167d1e8c5e82a8368715045a113409de6f3f94177df8ce453966",
+    "paper.json": "30fc2a84cad6e986aa9f4ddf5967a8c4284e374d8acbf316c79d12fc9d5ac42a",
+    "paper.pdf": "03e794bad468e0cb70a9d3b14bc2302f6eb7ab92090f471b03264d40b6e46fd3",
+    "source.archive": "e6b26b0e75d6010830955af0b735e507591740ad6344b0b5036b8f049c323803"
+  },
+  "snapshot_identity": "75bc27f8e455acc2a60d3d50360f5c386181105412c3b55388d5050b0c012459"
+}

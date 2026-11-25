@@ -1,0 +1,426 @@
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,amsmath,amssymb,amsthm,booktabs,tabularx}
+\usepackage[margin=1in]{geometry}
+\usepackage{xurl}
+\usepackage[colorlinks=true,linkcolor=blue,urlcolor=blue,citecolor=blue]{hyperref}
+\hypersetup{pdftitle={Factorial bounds and sharp onsets for A281428: extending Su (2026) on Bala's COMMENTS, items 1–2},
+pdfauthor={Haobo Ma; Wenlin Zhang},pdfsubject={Bala's COMMENTS items 1–2; CC BY 4.0}}
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\coeff}[2]{[#1]#2}
+\title{Factorial bounds and sharp onsets for A281428:\\
+extending Su (2026) on Bala's \textsc{Comments}, items 1--2}
+\author{Haobo Ma\\\small ChronoAI Pte Ltd, Singapore
+\and Wenlin Zhang\\\small National University of Singapore\\\small ChronoAI Pte Ltd, Singapore}
+\date{November 11, 2026}
+\begin{document}
+\maketitle
+\begin{abstract}
+We extend Su's (2026) proof of Peter Bala's conjectures in OEIS A281428,
+\textsc{Comments}, items 1--2 (displayed March 3, 2026), with factorial bounds and
+sharp onsets for the two accompanying examples.
+For its coefficients $a(n)=(2n)!\coeff{x^{2n}}{C(x)}$, we prove
+$v_p(a(n))\geq v_p((2n)!)$ for every prime $p\geq5$.
+The proof combines integral exponential coefficients with ordinary coefficients
+in $\Z[1/6]$, using the inverse cubic $u-u^3/3=x$.
+The exact eventual-zero onset modulo $385$ is $6$; modulo $27$, the least
+eventual period is $18$ and its earliest onset is $2$.
+The same argument gives factorial bounds for every polynomial in the two
+differential-system solutions, including the companion A281427 and A052502.
+\end{abstract}
+
+\section{The posed conjecture and a valuation bound}
+The entry A281428, introduced by Paul D. Hanna, defines $C\in\Q[[x]]$ by
+\begin{equation}\label{eq:source}
+C(x)=\cosh\left(\int_0^x C(t)^4\,dt\right),\qquad
+C(0)=1,\qquad a(n)=(2n)!\coeff{x^{2n}}{C(x)}.
+\end{equation}
+All series and integrals are formal. In \textsc{Comments}, item 1,
+Peter Bala conjectured eventual divisibility of $a(n)$ by every positive $N$
+coprime to $6$ \cite{oeis}. Item 2 asserts that when $2\mid N$ or $3\mid N$,
+the sequence modulo $N$ has an eventual period dividing $\varphi(N)$,
+where $\varphi$ is Euler's totient function.
+Both items carry Bala's signature of March 3, 2026.
+The edit history records their entry on February 16 (revision 32),
+the clarification of item 2 on February 17 (revision 33), and the addition
+of the examples and displayed March date in revision 37.
+Su \cite[Theorem 4.1, pp.~7--8]{su} proved
+this assertion and the neighboring eventual-period conjecture.
+Here the inverse cubic already recorded in the entry yields a direct
+denominator argument and the following factorial bound.
+For a nonzero rational number $q$, $v_p(q)$ is its $p$-adic valuation;
+we put $v_p(0)=+\infty$.
+
+\begin{theorem}\label{thm:main}
+Equation \eqref{eq:source} has a unique solution, which is even.
+Its coefficients satisfy $a(n)\in\Z$ and
+\begin{equation}\label{eq:valuation}
+v_p(a(n))\ \geq\ v_p((2n)!)\qquad(n\geq0,\ p\geq5\text{ prime}).
+\end{equation}
+Consequently, if $(N,6)=1$ and $N\mid(2n)!$, then $N\mid a(n)$.
+In particular $n\geq\lceil N/2\rceil$ is sufficient.
+\end{theorem}
+
+\begin{proof}
+Introduce $S=\sinh(\int_0^x C^4)$.
+The defining equation gives the differential system
+\begin{equation}\label{eq:ode}
+S'=C^5,\qquad C'=SC^4,\qquad S(0)=0,\quad C(0)=1.
+\end{equation}
+Conversely, the coefficients of this system are determined successively
+over $\Q$: at degree $j+1$ the right sides use coefficients through degree $j$.
+Thus it has a unique solution. Its invariant is $C^2-S^2=1$, since
+the derivative of the left side is zero and its constant coefficient is one.
+Writing $T=\int_0^x C^4$, the equations
+$(C+S)'=T'(C+S)$ and $(C-S)'=-T'(C-S)$ with constant coefficient one give
+$C+S=e^T$ and $C-S=e^{-T}$. This recovers \eqref{eq:source}.
+Uniqueness applied to $(-S(-x),C(-x))$ proves the asserted parity.
+
+To prove integrality with factorial normalization, work in
+\[
+R=\Z[s,c]/(c^2-s^2-1),\qquad
+D(s)=c^5,\quad D(c)=sc^4,\quad E(f)=f(0,1).
+\]
+The derivation is well defined because
+$D(c^2-s^2-1)=2sc^5-2sc^5=0$.
+The map $f\mapsto\sum_{j\geq0}E(D^j f)x^j/j!$ is multiplicative:
+the coefficient identity is the iterated Leibniz rule
+$D^j(fg)=\sum_{i=0}^j\binom jiD^i(f)D^{j-i}(g)$.
+Applied to $s,c$ it therefore solves \eqref{eq:ode}.
+In particular
+\begin{equation}\label{eq:integral}
+j!\coeff{x^j}{C}=E(D^jc)\in\Z.
+\end{equation}
+
+Set $u=S/C$, which is defined since $C(0)=1$. The invariant and
+\eqref{eq:ode} imply
+\begin{equation}\label{eq:cubic}
+u'=C^2,\qquad (1-u^2)C^2=1,\qquad
+u-\frac{u^3}{3}=x.
+\end{equation}
+For the last equality, differentiate: $(1-u^2)u'=1$; both sides have
+constant coefficient zero before differentiation.
+The recurrence $u=x+u^3/3$, with $u(0)=0$, shows by degree induction that
+$u\in\Z[1/3][[x]]$. Indeed the coefficient of degree $j$ in $u^3$
+uses coefficients of $u$ of degrees strictly less than $j$.
+It follows that $C^2=(1-u^2)^{-1}\in\Z[1/3][[x]]$.
+If $C=1+\sum_{j\geq1}c_jx^j$ and $C^2=1+\sum_{j\geq1}b_jx^j$, then
+\[
+2c_j=b_j-\sum_{i=1}^{j-1}c_i c_{j-i}.
+\]
+Another degree induction gives $C\in\Z[1/6][[x]]$.
+Hence $v_p(\coeff{x^{2n}}{C})\geq0$ for $p\geq5$.
+Combining this with \eqref{eq:integral} proves \eqref{eq:valuation}.
+For $(N,6)=1$, apply the valuation inequality at every prime dividing $N$.
+Finally $2n\geq N$ ensures $N\mid(2n)!$.
+\end{proof}
+
+\begin{corollary}[Polynomial observables]\label{cor:polynomial}
+For every $F\in\Z[s,c]$ and $j\geq0$, the number
+$b_F(j)=j!\coeff{x^j}{F(S(x),C(x))}$ is an integer, and
+$v_p(b_F(j))\geq v_p(j!)$ for every prime $p\geq5$.
+In particular this holds for all columns
+$A(n,k)=(2n)!\coeff{x^{2n}}{C^k}$ with $k\geq0$.
+\end{corollary}
+\begin{proof}
+The multiplicative differential-series map in the proof gives
+$b_F(j)=E(D^jF)\in\Z$. Since $S=uC$, both $S$ and $C$ lie in
+$\Z[1/6][[x]]$, as does $F(S,C)$. Multiplying its $p$-integral
+coefficient by $j!$ proves the bound.
+\end{proof}
+
+\begin{corollary}\label{cor:threshold}
+For $N\geq1$ coprime to $6$, let
+\[
+\mu(N)=\min\{m\geq0:N\mid m!\}.
+\]
+Then $N\mid a(n)$ for all $n\geq\lceil\mu(N)/2\rceil$.
+For $N=385$ the least eventual-zero onset is $6$.
+\end{corollary}
+\begin{proof}
+The first assertion follows from Theorem~\ref{thm:main}.
+Since $385=5\cdot7\cdot11$ divides $11!$ but not $10!$, $\mu(385)=11$.
+The initial values give $a(5)=15335425\equiv105\pmod{385}$,
+so an onset at most $5$ is impossible. This proves Bala's
+\textsc{Example} about divisibility modulo $385$ for every $n\geq6$.
+The same onset is already a consequence of Su's Theorem 4.1(1), whose
+$r=1$ bounds for $p=5,7,11$ are $3,4,6$, together with the displayed $a(5)$.
+\end{proof}
+For a prime power $p^r$ with $p\geq5$, a convenient explicit sufficient onset is
+$\lceil rp/2\rceil$, because $v_p((2n)!)\geq\lfloor2n/p\rfloor$.
+The sharper factorial criterion uses
+$v_p(m!)=\sum_{j\geq1}\lfloor m/p^j\rfloor$.
+
+\section{The excluded primes and source coverage}
+The same differential system gives a short converse. Following the
+parameterized recurrence credited to Seiichi Manyama in A281428
+(April 14, 2026), write
+$A(n,k)=(2n)!\coeff{x^{2n}}{C^k}$ for integers $k\geq0$.
+\begin{lemma}\label{lem:columns}
+For $k\geq0$, $A(0,k)=1$, and for $n\geq1$,
+\begin{equation}\label{eq:manyama}
+A(n,k)=k(k+4)A(n-1,k+8)-k(k+3)A(n-1,k+6).
+\end{equation}
+Every $a(n)$ is odd, and $a(n)\equiv(-1)^{n-1}\pmod3$ for $n\geq1$.
+\end{lemma}
+\begin{proof}
+Differentiate $C^k$ twice and use $S^2=C^2-1$:
+\[
+(C^k)''=kC^{k+8}+k(k+3)S^2C^{k+6}
+=k(k+4)C^{k+8}-k(k+3)C^{k+6}.
+\]
+Taking the $(2n-2)$nd derivative at zero proves \eqref{eq:manyama}.
+For odd $k$, its first multiplier is odd and its second is even;
+induction proves $A(n,k)$ odd.
+Modulo $3$ we prove $A(n,k)\equiv(-1)^{n-1}k$ for every $k$ and $n\geq1$.
+The case $n=1$ is $A(1,k)=k$. For $n\geq2$, substitute the induction
+hypothesis in \eqref{eq:manyama}; apart from the factor $(-1)^{n-2}$,
+the resulting expression is
+\[
+k(k+1)(k+2)-k^3\equiv-k\pmod3.
+\]
+Here three consecutive integers have product divisible by $3$, and
+$k^3\equiv k\pmod3$. Set $k=1$.
+\end{proof}
+\begin{corollary}
+For $N\geq1$, $N$ divides all sufficiently late $a(n)$ if and only if
+$(N,6)=1$. In fact no $a(n)$ is divisible by $2$ or $3$.
+\end{corollary}
+\begin{proof}
+Use Theorem~\ref{thm:main} and Lemma~\ref{lem:columns}; $a(0)=1$.
+\end{proof}
+
+\begin{corollary}[Two cross-referenced companions]\label{cor:companions}
+With the original offsets, put
+$h(n)=(2n-1)!\coeff{x^{2n-1}}S$ for $n\geq1$ (A281427), and
+$r(n)=(2n)!\coeff{x^{2n}}{C^2}$ for $n\geq0$ (A052502).
+For $p\geq5$, $v_p(h(n))\geq v_p((2n-1)!)$.
+A positive $N$ eventually divides $h(n)$ exactly when $(N,6)=1$;
+a sufficient onset is $\lceil(\mu(N)+1)/2\rceil$.
+Moreover
+\[
+r(n)=\frac{(3n)!}{3^n n!},\qquad
+v_p(r(n))\geq v_p((2n)!)\quad(p\ne3).
+\]
+A positive $N$ eventually divides $r(n)$ exactly when $3\nmid N$,
+with sufficient onset $\lceil\mu(N)/2\rceil$.
+\end{corollary}
+\begin{proof}
+The first bound follows from Corollary~\ref{cor:polynomial}.
+Since $S'=C^5$, $h(n)=A(n-1,5)$; Lemma~\ref{lem:columns} shows these
+numbers are odd and $h(n)\equiv(-1)^{n-1}\pmod3$ (including $n=1$).
+The stated factorial threshold then proves the characterization.
+Lagrange inversion, as displayed in Section~\ref{sec:coverage}, gives
+$\coeff{x^{2n}}{C^2}=3^{-n}\binom{3n}{n}$ and the formula for $r(n)$.
+This coefficient is $p$-integral for every $p\ne3$.
+Also $r(n)=\prod_{j=1}^n(3j-1)(3j-2)$ is an integer prime to $3$.
+These facts prove the second characterization and threshold.
+\end{proof}
+These are consequences for the named companions, not conjectures posed
+in their entries. Their source identities and offsets are given in
+\cite{companions}; no assertion of priority is made for these consequences.
+
+\section{The modulo-27 example: exact period and onset}\label{sec:27}
+\begin{theorem}\label{thm:27}
+Modulo $27$, $a(n)$ has least eventual period $18$, and the earliest
+onset for this period is $n=2$.
+\end{theorem}
+\begin{proof}
+We use the recurrence credited to Kotesovec in A281428 (February 24, 2026):
+\begin{equation}\label{eq:kotesovec}
+\begin{split}
+16a(n)={}&(288n^2-576n+317)a(n-1)\\
+&-9(2n-3)^2(6n-11)(6n-7)a(n-2),\quad n\geq2.
+\end{split}
+\end{equation}
+For completeness, it follows directly from the inverse cubic.
+Writing $u=S/C$, differentiation gives
+\begin{align*}
+C'&=u(1-u^2)^{-5/2},&
+C''&=(1+4u^2)(1-u^2)^{-9/2},\\
+C'''&=u(17+28u^2)(1-u^2)^{-13/2}.
+\end{align*}
+Substitution of these expressions and $x=u-u^3/3$ yields
+\begin{equation}\label{eq:linear}
+(9x^2-4)^2C'''+54x(9x^2-4)C''+(531x^2-101)C'+45xC=0.
+\end{equation}
+Indeed, after factoring out $u(1-u^2)^{-5/2}$, the remaining
+polynomial, with $t=u^2$, is
+\begin{align*}
+&(17+28t)(4-t)^2-18(3-t)(4-t)(1+4t)\\
+&\hspace{2em}+59t(3-t)^2-101+15(3-t)(1-t)^2=0.
+\end{align*}
+The coefficient of $x^{2n-3}/(2n-3)!$ in \eqref{eq:linear} is
+\eqref{eq:kotesovec} for every $n\geq2$.
+
+Reducing that recurrence modulo $27$ gives
+\begin{equation}\label{eq:mod27}
+16a(n)\equiv(18n^2+18n+20)a(n-1)+9n^2a(n-2)\pmod{27}.
+\end{equation}
+Its coefficients have period $3$, and $16$ is invertible modulo $27$.
+Starting from $a(0)=a(1)=1$, the exact residue calculation gives
+\[
+\begin{array}{c|rrrrrrrrrr}
+n&2&3&4&5&6&7&8&9&10&11\\ \hline
+a(n)\bmod27&17&1&8&19&17&1&26&19&17&10
+\end{array}
+\]
+\[
+\begin{array}{c|rrrrrrrrrr}
+n&12&13&14&15&16&17&18&19&20&21\\ \hline
+a(n)\bmod27&26&19&8&10&26&1&8&10&17&1.
+\end{array}
+\]
+Thus the pairs at $2,3$ and $20,21$ agree. Induction in
+\eqref{eq:mod27} proves $a(n+18)\equiv a(n)$ for every $n\geq2$.
+An earlier onset is impossible because $a(1)=1\not\equiv10=a(19)$.
+On a sequence with period $18$, its least eventual period divides $18$:
+any tail period also acts on the same $18$ residue classes.
+Every proper divisor of $18$ divides $6$ or $9$.
+But $a(2)=17\not\equiv26=a(8)$ and
+$a(2)=17\not\equiv10=a(11)\pmod{27}$, excluding both periods.
+\end{proof}
+This proves the source's numerical observation beginning at $7$, and
+sharpens its onset to $2$. Su's Theorem 4.1(3) already gives period $18$
+from $3$; the present recurrence argument identifies the optimal onset
+and the least period for this particular modulus.
+The optimality conclusions also follow by combining Su's theorem with
+Bala's displayed residues; the proof above does not require the general
+period theorem.
+
+\begin{corollary}[A cross-referenced operator identity]\label{cor:operator}
+In A281183, \textsc{Formula}, December 22, 2025, define polynomials
+$g_0(z)=1$ and $g_{j+1}(z)=(1+z^2)\frac{d}{dz}((1+z^2)g_j(z))$.
+Then $g_{2n}(0)$ is the $n$th term of A281183, as suggested there.
+\end{corollary}
+\begin{proof}
+Write $M(\theta)=\sec^2\theta$. Substitution $z=\tan\theta$ gives
+$g_{j+1}(\tan\theta)=\frac{d}{d\theta}(M(\theta)g_j(\tan\theta))$.
+Let $V(0)=0$, $V'=M(V)$; thus $V$ is the inverse of
+$\int_0^\theta\cos^2 t\,dt$, and $V'$ is the source e.g.f. of A281183.
+The operator identity
+$(\partial_\theta M)^j=M^{-1}(M\partial_\theta)^jM$ yields
+$g_j(0)=\left.\frac{d^j}{dx^j}M(V(x))\right|_{x=0}$, since $M(0)=1$.
+For $j=2n$ this is exactly the source factorial normalization.
+\end{proof}
+
+\section{Source coverage and the Lean declaration}\label{sec:coverage}
+The two conjectures and two numerical observations in Bala's
+March 3, 2026 contribution have the following coverage.
+\begin{center}\small
+\begin{tabularx}{\linewidth}{@{}p{.28\linewidth}X@{}}
+\toprule
+Source item in A281428 & Mathematical coverage\\
+\midrule
+\textsc{Comments}, 1 & Reproved here with a factorial valuation bound;
+prior proof: Su (2026), Theorem 4.1(1).\\
+\textsc{Comments}, 2 & Prior proof cited: Su (2026), Theorem 4.1(2)--(3)
+and its Chinese remainder argument. The eventual period divides $\varphi(N)$.\\
+\textsc{Example}, modulus $385$ & Proved for all $n\geq6$ in
+Corollary~\ref{cor:threshold}, including minimality of the onset.\\
+\textsc{Example}, modulus $27$ & Reproved and sharpened in
+Theorem~\ref{thm:27}: least period $18$, earliest onset $2$;
+prior proof: Su (2026), Theorem 4.1(3), onset $3$.\\
+Manyama's columns, \textsc{Formula}, April 14, 2026 & Proved recurrence
+in Lemma~\ref{lem:columns}; all-column valuation bound in
+Corollary~\ref{cor:polynomial} (not posed as a conjecture).\\
+A281427 and A052502, cross-references & Not posed; proved consequences
+in Corollary~\ref{cor:companions}.\\
+\textsc{Formula}, January 22, 2026 & Refuted-and-corrected ordinary
+coefficient normalization, following Su (2026), Remark 4.2; proof below.\\
+A281180, A281181, A281183, cross-references & Prior proofs cited:
+Su (2026), Corollary 3.3 and Propositions 3.4, 3.6; these use exponent $4$,
+not the exponent-$5$ flow here.\\
+A281183, \textsc{Formula}, December 22, 2025, $g$ identity & Proved in
+Corollary~\ref{cor:operator}; a distinct operator identity, not a new
+periodicity claim.\\
+\bottomrule
+\end{tabularx}
+\end{center}
+The inverse-cubic and differential identities used above are source formulas,
+not additional conjectures. The other inverse-function representations and
+the stated asymptotic are not covered here. The source's algebraic formula
+$(4-9x^2)C^6-3C^2-1=0$ follows by putting $z=C^2$ in
+$9x^2z^3=(z-1)(2z+1)^2$; the latter is the square of
+$x=u-u^3/3$ with $u^2=(z-1)/z$.
+For the source's operator $f_k(n,0)$ in the January 22, 2026
+\textsc{Formula} block, Su's Remark 4.2 gives the corrected normalization
+$f_k(n,0)=n!\coeff{x^n}{C(x)^k}$. Already $k=1,n=2$ distinguishes
+$f_1(2,0)=1$ from $\coeff{x^2}{C}=1/2$.
+To see the full identity, put $u=\sin\theta$, so that
+$x=\sin\theta-\sin^3\theta/3$, $C=\sec\theta$, and
+$d/dx=L=\sec^3\theta\,d/d\theta$.
+The source recurrence for $f_k$ gives
+$\sec^3\theta\,f_k(n,\theta)=L^n\sec^k\theta$ by induction from
+$f_k(0,\theta)=\sec^{k-3}\theta$.
+Evaluation at $\theta=0$ proves the factorial correction.
+
+For a direct rational-coefficient check, Lagrange inversion
+\cite[Theorem 2.1.1, equation (2.1.1)]{gessel} applied to
+$u=x/(1-u^2/3)$ gives
+\[
+\coeff{x^{2n+1}}{u}
+=\frac1{2n+1}\coeff{t^{2n}}{(1-t^2/3)^{-(2n+1)}}
+=\frac1{(2n+1)3^n}\binom{3n}{n}.
+\]
+Since $C^2=u'$, this recovers the source identity
+$\coeff{x^{2n}}{C^2}=3^{-n}\binom{3n}{n}$.
+The accompanying \texttt{verify.py} uses this identity and square-root
+coefficient recursion through $n=128$. It compares two integer recurrences
+through $n=256$, checks the displayed initial values, and checks
+the valuation inequalities for every prime $5\leq p\leq101$ over that range.
+These are finite checks; the all-index valuation bound is proved above.
+
+The pinned Lean file
+\href{https://github.com/the-omega-institute/trureturing/blob/b0f7c01b01511ea00428c1b6edad5dd2b372eaf8/D5/S1/Recurrence/Residue/BalaQuarticEGFEventualDivisibility.lean}{\texttt{BalaQuarticEGFEventualDivisibility.lean}}
+contains the declaration \texttt{result} in namespace
+\texttt{D5.S1.Recurrence.Residue.}\allowbreak
+\texttt{BalaQuarticEGFEventualDivisibility}.
+Its statement is existence of a solution to \eqref{eq:source} and eventual
+integer divisibility for every positive $N$ coprime to $6$;
+the proof uses the sufficient onset $\lfloor(N+1)/2\rfloor$.
+The factorial valuation bound, the converse at $2$ and $3$, and the sharp
+onset modulo $385$, polynomial-observable and companion corollaries,
+the cross-referenced operator identity, and exact modulo-$27$ period and
+onset have written proofs here.
+These additions are not statements of that declaration.
+Su's cited theorem supplies
+the general eventual-period statement.
+
+\begin{thebibliography}{9}
+\bibitem{oeis}
+The OEIS Foundation Inc., \emph{A281428}.
+Entry by Paul D. Hanna (January 21, 2017);
+conjectures by Peter Bala, \textsc{Comments}, items 1--2
+(displayed March 3, 2026; first entered February 16, 2026).
+\url{https://oeis.org/A281428}. Accessed November 11, 2026.
+\bibitem{companions}
+The OEIS Foundation Inc., \emph{A281427} and \emph{A052502}.
+\url{https://oeis.org/A281427}; \url{https://oeis.org/A052502}.
+Companion identities credited to Peter Bala (December 14, 2025;
+January 2, 2015; January 22, 2026).
+The formula $(3n)!/(3^n n!)$ in A052502 is credited to Ahmed Fares
+(April 21, 2001). Accessed November 11, 2026.
+Also A281183, \textsc{Formula}, Peter Bala, December 22, 2025,
+\url{https://oeis.org/A281183}.
+\bibitem{su}
+Lien-Hung Su, \emph{Quadratic Derivations and Uniform Modular Periods
+for Six Inverse-Function Sequences}, version 1, October 31, 2026.
+Zenodo, \href{https://doi.org/10.5281/zenodo.23835577}{doi:10.5281/zenodo.23835577}.
+Theorem 4.1 and Remark 4.2, pp.~7--8.
+\bibitem{gessel}
+Ira M. Gessel, \emph{Lagrange inversion}, Journal of Combinatorial Theory,
+Series A \textbf{144} (2016), 212--249,
+\href{https://doi.org/10.1016/j.jcta.2016.06.018}{doi:10.1016/j.jcta.2016.06.018}.
+Author version: arXiv:1609.05988v1, Theorem 2.1.1,
+\url{https://arxiv.org/abs/1609.05988v1}.
+\end{thebibliography}
+\bigskip\noindent\small
+\copyright\ 2026 Haobo Ma and Wenlin Zhang.
+Licensed under Creative Commons Attribution 4.0 International
+(CC BY 4.0): \url{https://creativecommons.org/licenses/by/4.0/}.
+\end{document}

@@ -1,0 +1,10 @@
+cff-version: 1.2.0
+message: "If you use this work, cite it."
+title: "Factorial bounds and sharp onsets for A281428: extending Su (2026) on Bala's COMMENTS, items 1–2"
+authors:
+  - name: "Haobo Ma"
+  - name: "Wenlin Zhang"
+date-released: "2026-11-25"
+version: "2"
+url: "https://mathesis-omega-research.apps.chrono-ai.fun/papers/bala281428-factorial-valuations?version=2"
+license: "CC-BY-4.0"

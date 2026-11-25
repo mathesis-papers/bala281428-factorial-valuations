@@ -1,0 +1,66 @@
+{
+  "files": {
+    "pdf": {
+      "bytes": 93334,
+      "matches_public": true,
+      "path": "paper.pdf",
+      "public_sha256": "03e794bad468e0cb70a9d3b14bc2302f6eb7ab92090f471b03264d40b6e46fd3",
+      "sha256": "03e794bad468e0cb70a9d3b14bc2302f6eb7ab92090f471b03264d40b6e46fd3"
+    },
+    "source": {
+      "bytes": 16359,
+      "matches_public": true,
+      "path": "source.archive",
+      "public_sha256": "e6b26b0e75d6010830955af0b735e507591740ad6344b0b5036b8f049c323803",
+      "sha256": "e6b26b0e75d6010830955af0b735e507591740ad6344b0b5036b8f049c323803"
+    }
+  },
+  "source_identity": "Mathesis public projection",
+  "work": {
+    "abstract_text": "We extend Su's (2026) proof of Peter Bala's conjectures in OEIS A281428, COMMENTS, items 1–2 (displayed March 3, 2026), with factorial bounds and sharp onsets for the two accompanying examples. For a(n)=(2n)![x^(2n)]C(x), we prove v_p(a(n)) >= v_p((2n)!) for every prime p >= 5. The proof combines integral exponential coefficients with ordinary coefficients in Z[1/6], using the inverse cubic u-u^3/3=x. The exact eventual-zero onset modulo 385 is 6; modulo 27, the least eventual period is 18 and its earliest onset is 2. The same argument gives factorial bounds for every polynomial in the two differential-system solutions, including the companion A281427 and A052502.",
+    "authors": [
+      {
+        "affiliation": "ChronoAI Pte Ltd, Singapore",
+        "name": "Haobo Ma"
+      },
+      {
+        "affiliation": "National University of Singapore; ChronoAI Pte Ltd, Singapore",
+        "name": "Wenlin Zhang"
+      }
+    ],
+    "concept_doi": null,
+    "current_version": 2,
+    "doi": null,
+    "lean_source": {
+      "revision": "b0f7c01b01511ea00428c1b6edad5dd2b372eaf8",
+      "url": "https://github.com/the-omega-institute/trureturing/blob/b0f7c01b01511ea00428c1b6edad5dd2b372eaf8/D5/S1/Recurrence/Residue/BalaQuarticEGFEventualDivisibility.lean"
+    },
+    "license": "CC-BY-4.0",
+    "msc": [],
+    "pdf": {
+      "bytes": 93334,
+      "sha256": "03e794bad468e0cb70a9d3b14bc2302f6eb7ab92090f471b03264d40b6e46fd3",
+      "url": "/api/v1/collected-papers/bala281428-factorial-valuations/files/pdf?version=2"
+    },
+    "previous_version": null,
+    "publication": "public",
+    "published_on": "2026-11-25T14:32:44.237813655Z",
+    "record": "bala281428-factorial-valuations",
+    "repository_name": "bala281428-factorial-valuations",
+    "source": {
+      "bytes": 16359,
+      "sha256": "e6b26b0e75d6010830955af0b735e507591740ad6344b0b5036b8f049c323803",
+      "url": "/api/v1/collected-papers/bala281428-factorial-valuations/files/source?version=2"
+    },
+    "title": "Factorial bounds and sharp onsets for A281428: extending Su (2026) on Bala's COMMENTS, items 1–2",
+    "versions": [
+      {
+        "previous_version": null,
+        "published_on": "2026-11-25T14:32:44.237813655Z",
+        "revision": "2",
+        "version": 2
+      }
+    ],
+    "work": "bala281428-factorial-valuations"
+  }
+}
