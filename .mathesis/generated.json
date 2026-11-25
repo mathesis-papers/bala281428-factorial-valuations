@@ -19,10 +19,10 @@
   "generator_version": "0.1.0",
   "sha256": {
     "CHANGELOG.md": "b51158266a92fb4c9a9669256667feba4453fb6bee8b0bc7a6b4abe0d0cba146",
-    "CITATION.cff": "74e13d92ec319c875a3fc92cab544a007c9f7e486ca70b5a09f88cbcb10aa59d",
+    "CITATION.cff": "b6d2bd37db093ee0c3d1be4d57b7cdcaee0d4a096e50e550c8e93aa77ecf47e0",
     "CONTRIBUTING.md": "fafd66e63160b2a88f433af56d2af2b0f7bf6ed2fd417d46b54446ce07c627ff",
     "LICENSES/CC-BY-4.0.txt": "58230517b7895aa219ff46a6ed63e67057a1582fb9ea054b16728a8c13525650",
-    "README.md": "61d020238232d1b6b3719afca4a524b00f983a0ca32bd7582543ce580f9d2cc8",
+    "README.md": "b79c5dd43327c32170834861f0a590268260d5c2c4eb49c562cc52768d1ef960",
     "formalization/nodes.json": "d45d2dc9ac4ac3ddc43b45d9b234ac5b1f3fa5e27738dd5ebeddcb5598209f6e",
     "manuscript/bala281428-factorial-valuations-v2/README.md": "1acac26940739675f92ed98c822196ae6aa9d86360204bd2055be746aa249aa7",
     "manuscript/bala281428-factorial-valuations-v2/SHA256SUMS": "0833f0a820b424ce4e510250227ccf03938ea3cbd58467c25bd73452d83585c3",
@@ -30,9 +30,9 @@
     "manuscript/bala281428-factorial-valuations-v2/note.tex": "ff9b3750b9f6ecb446bf897edab16a1d7e586d30f47d2f99e17a4c26d959e397",
     "manuscript/bala281428-factorial-valuations-v2/verification.json": "35466712c8b8332a003a58337322b512791df3c253e38be8d1bb6cc9973fc284",
     "manuscript/bala281428-factorial-valuations-v2/verify.py": "4d65735daa5e167d1e8c5e82a8368715045a113409de6f3f94177df8ce453966",
-    "paper.json": "30fc2a84cad6e986aa9f4ddf5967a8c4284e374d8acbf316c79d12fc9d5ac42a",
+    "paper.json": "b5cf30a430da9c44c4050ea5003035043be50435bfa9d4ebc7d6821c79f8dd7e",
     "paper.pdf": "03e794bad468e0cb70a9d3b14bc2302f6eb7ab92090f471b03264d40b6e46fd3",
     "source.archive": "e6b26b0e75d6010830955af0b735e507591740ad6344b0b5036b8f049c323803"
   },
-  "snapshot_identity": "75bc27f8e455acc2a60d3d50360f5c386181105412c3b55388d5050b0c012459"
+  "snapshot_identity": "d581c908e65125bd2b48f08e944305dd8f85f2fbdc7c12e9d67955a7299a690b"
 }
